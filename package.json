@@ -19,10 +19,10 @@
     "plugin"
   ],
   "dependencies": {
+    "bluebird": "^2.3.10",
     "findit": "^2.0.0",
     "hoek": "^2.8.0",
-    "path": "^0.4.9",
-    "q": "^1.0.1"
+    "path": "^0.4.9"
   },
   "peerDependencies": {
     "hapi": ">=7.x.x"
