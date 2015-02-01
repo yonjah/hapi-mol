@@ -5,6 +5,11 @@ Simple module loader plugin for hapi.js
 Mol allows you to easily manage your app across multiple files.
 For a full guide see the examples.
 
+## Install
+```shell
+npm install hapi-mol
+```
+
 ## Usage
 ```javascript
 var hapi   = require('hapi'),
