@@ -3,6 +3,10 @@
   "version": "0.0.2",
   "description": "Simple module loader plugin for hapi.js",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yonjah/hapi-mol.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
