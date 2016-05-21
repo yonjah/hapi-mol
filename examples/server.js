@@ -25,21 +25,21 @@ server.register([sol, mol], function (err){
 	server.plugins.mol.load('models', App.models, function (path, base, ext, scope){
 		scope[base] = require(path);
 	}).then(function (){
-		server.plugins.mol.load('controllers', App.controllers, function (path, base, ext, scope, parts){
-			var prefix,
-				controller = require(path);
-			scope[base] = controller;
-			if (controller.setScope) {
-				controller.setScope(App);
-			}
-			if (parts[0] === 'api') {
-				prefix = parts.concat(base).join('/');
-				controller.forEach(function (route){
-					route.path = '/' + prefix + route.path;
-				});
-			}
-			server.route(controller);
-		});
+		return server.plugins.mol.load('controllers', App.controllers, function (path, base, ext, scope, parts){
+				var prefix,
+					controller = require(path);
+				scope[base] = controller;
+				if (controller.setScope) {
+					controller.setScope(App);
+				}
+				if (parts[0] === 'api') {
+					prefix = parts.concat(base).join('/');
+					controller.forEach(function (route){
+						route.path = '/' + prefix + route.path;
+					});
+				}
+				server.route(controller);
+			});
 	}).then(server.start.bind(server, function (err) {
 		if (err) {
 			console.error(err);
