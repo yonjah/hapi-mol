@@ -1,4 +1,4 @@
-# hapi-mol
+# hapi-mol - DEPRECATED This module is no longer maintained
 
 Simple module loader plugin for hapi.js
 
